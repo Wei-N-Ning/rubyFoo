@@ -15,11 +15,16 @@ def demo_foreach
   print "\n"
 end
 
+# recap: udemy compr ruby prog s6l27
+# iterable.each do |argument(s)|
 def demo_each
   l = %w[there is a cow]
   l.each do |x|
     print x.to_s
   end
+  print ' - '
+  # this works for oneliner
+  l.each { |x| print x }
   print "\n"
 end
 
