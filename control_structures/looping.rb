@@ -28,6 +28,9 @@ def demo_each
   print "\n"
 end
 
+# recap in udemy compr ruby prog s6l28
+# for var in iterable
+# end
 def for_numeric_range
   for i in 0..12 
     print i.to_s
@@ -51,8 +54,31 @@ def times_loop
   # global var is bad; it does not have file scope
 end
 
+# source: udemy compr ruby prog s6l29
+def multiple_loop_variables
+  weapons = {
+    'rifle' => {
+      'heavy' => 'fn fal',
+      'medium' => 'm16',
+      'light' => 'm4',
+    }
+  }
+
+  def iterate_rifle_name(weapons:)
+    weapons.each do |cate, sub_cates|
+      sub_cates.each do |sub_cate, rifle_name|
+        puts rifle_name
+      end
+    end
+  end
+
+  iterate_rifle_name(weapons: weapons)
+
+end
+
 demo_while_loop
 demo_foreach
 demo_each
 for_numeric_range
 times_loop; p $global_var
+multiple_loop_variables
