@@ -17,6 +17,14 @@ def create_hash_table
   p ht
 end
 
+# take a hash table and pack each k,v pair in the form of 
+# k=v&k=v...
+# p {a:1, b:2} won't work...
+def urlify_changing
+  {"JaneDoe" => 10, "JimDoe" => 6}.map{|k, v| "#{k}=#{v}"}.join('&')
+end
+
 str_to_i()
 create_hash_table()
+p urlify_changing()
 
