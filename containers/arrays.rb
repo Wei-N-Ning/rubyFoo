@@ -3,9 +3,11 @@ def demo_array_creation
   mixed = [1, 2, 'string']
   words = %w[ad bc]
 
-  # %w/.../, %w(...)
+  # these also work
+  # recap in udemy compr ruby prog s6l30
+  # %w(...), %w/.../, %w(...)
 
-  print "#{nums} #{mixed} #{words}"
+  puts "#{nums} #{mixed} #{words}"
 end
 
 demo_array_creation
