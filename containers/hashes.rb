@@ -19,16 +19,32 @@ end
 def iterate_key_value
   level = {name: 'hells gate', code: 'e1m1'}
   
-  p level.each_key.to_a
+  p level.each_key.to_a  # better: keys()
   # each_key do |x|
   # end
-  p level.each_value.to_a
+  p level.each_value.to_a  # better: values()
+
+  # see also level.to_a -> [[k, v], [k, v] ...]
+end
+
+# k,v -> v,k
+def invert_hash_table
+  level = {name: 'hells gate', code: 'e1m1'}
+  p level.invert['hells gate'] == :name  # :name and 'name' are different
+end
+
+def merge_hash_tables
+  level = {name: 'hells gate', code: 'e1m1'}.merge(
+    {code: 'e3m1'}
+  )
+  p level
 end
 
 demo_hash_creation
 delete_element
 iterate_key_value
-
+invert_hash_table
+merge_hash_tables
 
 
 
