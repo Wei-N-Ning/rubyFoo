@@ -18,6 +18,7 @@ def delete_elements_by_value
   p nums
   nums.delete(1); nums.delete('')
   p nums
+  p nums - [3, 4]  # remove elements 3, 4 from the array
 
   # delete_at() will delete the element at position x and 
   # return the value to lhs

@@ -36,6 +36,8 @@ def splitting
   # ruby's split in perl:
   # perl -E "$,='|'; say grep {/\S+/} split /\s+/, '   there    is  a  c ow   '"
   p '   there    is  a  c ow   '.split()
+
+  p 'thereisacow'.split('').map(&:upcase)
 end
 
 change_case
