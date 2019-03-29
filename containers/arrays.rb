@@ -1,3 +1,9 @@
+#!/usr/bin/env ruby
+
+def size_test
+  p [[].empty?, [1].empty?]
+end
+
 def demo_array_creation
   nums = [1, 2, 3]
   mixed = [1, 2, 'string']
@@ -45,11 +51,9 @@ def push_and_pop
   p nums
 end
 
+size_test
 demo_array_creation
 delete_elements_by_value
 delete_if
 do_join
 push_and_pop
-
-
-

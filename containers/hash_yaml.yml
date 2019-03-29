@@ -1,0 +1,48 @@
+
+service: big-mouths # NOTE: update this with your service name
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: ap-southeast-2
+  # TODO: use pseudo parameter and precise resource ARN 
+  iamRoleStatements:
+    - Effect: Allow
+      Action: dynamodb:scan
+      Resource: '*'
+
+functions:
+  get-index:
+    handler: functions/get-index.handler
+    events:
+      - http:
+          path: /
+          method: get
+    environment:
+      restaurant_api: https://sadnh0xpi9.execute-api.ap-southeast-2.amazonaws.com/dev/restaurants
+
+  get-restaurants:
+    handler: functions/get-restaurants.handler
+    events:
+      - http:
+          path: /restaurants
+          method: get
+          authorizer: aws_iam
+    environment:
+      restaurants_table: restaurants
+
+resources:
+  Resources:
+    restaurantsTables:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: restaurants
+        AttributeDefinitions:
+          - AttributeName: name
+            AttributeType: S
+        KeySchema:
+          - AttributeName: name
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
