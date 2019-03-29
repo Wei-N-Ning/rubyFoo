@@ -41,6 +41,9 @@ class Author
     )
   end
 
+  # used by rail application, e.g.
+  # invoking find_by_attr() calls find_by(), the real method
+  # with argument
   def method_missing(method_name, *args, &block)
     if method_name.to_s =~ /^author_(.*)/
       author.send($1, *args, &block)
