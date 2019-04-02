@@ -21,4 +21,16 @@ def demo_lambda
   p fun[40, 'thieves']
 end
 
+def demo_lambda_as_iterator
+  # can not define local iterator using lambda?
+  # no block given (yield) (LocalJumpError)
+  iter = ->(lower, upper) {
+    for elem in lower..upper do
+      yield elem
+    end
+  }
+  arr = []; p iter[3, 14]
+end
+
 demo_lambda
+demo_lambda_as_iterator

@@ -20,15 +20,34 @@ class Iteratable
   end
 end
 
-def demo_iteration
-  sequence { |x| print x.to_s }
+def demo_function_as_iterator
+  sequence { |x| print x.to_s }  # short syntax
   print "\n"
+  
+  arr = []; sequence do |elem|  # long syntax
+    arr.push(elem)
+  end
+  p arr
+end
 
+def demo_object_as_iterator
   iter = Iteratable.new(from: 1, to: 10)
   iter.each do |x|
     print x.to_s
   end
   print "\n"
+
+  # use for..in control structure
+  arr = []
+  for elem in Iteratable.new(from: 1, to: 10)
+    arr.push(elem)
+  end
+  p arr
 end
 
-demo_iteration
+def main
+  demo_function_as_iterator
+  demo_object_as_iterator
+end
+
+main

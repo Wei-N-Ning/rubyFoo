@@ -1,8 +1,17 @@
-def compare_str_with_regex
-  case 'there is acow'
+
+# ??? default case ???
+def compare_str_with_regex(text)
+  case text
   when /cow\b/
-    print 'any cow'
+    puts 'any cow'
+  when /\bdoom\b/
+    puts 'doom'
   end
 end
 
-compare_str_with_regex
+def main
+  compare_str_with_regex('there is a cow')
+  compare_str_with_regex('')
+end
+
+main
