@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# dish: convert hash to object
+
 # rubygems.org
 require 'rubygems'
 
@@ -11,7 +13,9 @@ require 'rubygems'
 #  will end up in ~/.gem/ruby/1.9.1/bin. For the programs installed
 # there to be available for you, you need to add ~/.gem/ruby/1.9.1/bin 
 # to your PATH environment variable.
+
 require 'dish'
+
 
 def demo_dish
   mo = {

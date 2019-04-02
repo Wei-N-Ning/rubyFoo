@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+# recall jq command line tool
+# to retrieve the end value using a series of keys or nil
+# if one of the key does not exist (or its value is nil)
+
 require 'yaml'
 
 def demo_dig(record, path)
