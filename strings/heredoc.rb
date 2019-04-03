@@ -29,6 +29,15 @@ def indent
   TEXT
 end
 
+def unindent
+  print(<<~TEXT)
+    #!/usr/bin/env bash
+    asd
+    bsd
+  TEXT
+end
+
 interpretated
 uninterpretated
 indent
+unindent
