@@ -15,10 +15,13 @@ class GithubApiDemo
   end
 end
 
+ACCESS_TOKEN = '2343c28bace4ff848b5c0e9d136a149de5bc4be9'
+
 # how to construct query parameters (http get)
 class GithubApiConnector
   include HTTParty
   base_uri 'https://api.github.com'
+  # headers 'Authorization' => "token #{ACCESS_TOKEN}"
 
   def initialize(filter, page)
     # construct the parameters for http-get
@@ -35,6 +38,7 @@ class GithubApiConnector
     }
     self.class.get('/repos/Wei-N-Ning/hourglass/tags', options)
   end
+
 end
 
 def api_demo
@@ -59,6 +63,7 @@ def connector_demo
   response = conn.tags
   p response.code
   p response.body
+
 end
 
 def parse_response(resp)
@@ -67,5 +72,5 @@ def parse_response(resp)
   end
 end
 
-api_demo
+# api_demo
 connector_demo
