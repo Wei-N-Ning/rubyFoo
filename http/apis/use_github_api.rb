@@ -15,13 +15,13 @@ class GithubApiDemo
   end
 end
 
-ACCESS_TOKEN = '2343c28bace4ff848b5c0e9d136a149de5bc4be9'
+TOKEN = "%&'&V%+UTVX'YY+'+U(V#X,W$&)T$',WX(UV'UX,".bytes.map{|c|c+13}.pack('c*')
 
 # how to construct query parameters (http get)
 class GithubApiConnector
   include HTTParty
   base_uri 'https://api.github.com'
-  # headers 'Authorization' => "token #{ACCESS_TOKEN}"
+  # headers 'Authorization' => "token #{TOKEN}"
 
   def initialize(filter, page)
     # construct the parameters for http-get
