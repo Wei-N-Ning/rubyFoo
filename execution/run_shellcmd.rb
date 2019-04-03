@@ -2,13 +2,14 @@
 
 def demo
   username = `whoami`
-  print username
-  print `ls -l`
+  puts username.chomp
+  puts `ls -l`.chomp
 
   # discouraged by IDE
   %x[who -a | perl -wnl -E '/\w+/ && say']
-  usernames = `who -a | perl -wnl -E '/^\w+/ && say'`
-  print usernames
+
+  usernames = `who -a | perl -wnl -E '/^\w+/ && say'`.chomp
+  puts usernames
 end
 
 demo
