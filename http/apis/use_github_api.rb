@@ -28,6 +28,13 @@ class GithubApiConnector
   def repositories
     self.class.get('/search/repositories', @options)
   end
+
+  def tags
+    options = {
+
+    }
+    self.class.get('/repos/Wei-N-Ning/hourglass/tags', options)
+  end
 end
 
 def api_demo
@@ -48,6 +55,10 @@ def connector_demo
   # p response.body
 
   parse_response(response)
+
+  response = conn.tags
+  p response.code
+  p response.body
 end
 
 def parse_response(resp)
@@ -56,5 +67,5 @@ def parse_response(resp)
   end
 end
 
-# api_demo
+api_demo
 connector_demo
