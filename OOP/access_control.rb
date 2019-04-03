@@ -11,7 +11,7 @@ class ApiConnector
   private 
     def _compute
       output = `ls -l /var/tmp`
-      p output.split("\n")
+      p output.each_line.to_a
     end
 end
 

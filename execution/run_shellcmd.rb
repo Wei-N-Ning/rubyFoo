@@ -10,6 +10,11 @@ def demo
 
   usernames = `who -a | perl -wnl -E '/^\w+/ && say'`.chomp
   puts usernames
+
+  `who -a | perl -wnl -E '/^\w+/ && say'`.each_line do |line|
+    # line carries a trailing newline (should call chomp)
+    p line
+  end
 end
 
 demo

@@ -5,11 +5,11 @@ def open_to_read
   # oneliner syntax works also here
   File.open('/etc/ssh/ssh_config', 'r') do |fp|
     text = fp.read()
-    puts text.split("\n").length
+    puts text.each_line.to_a.length
   end
 
   # streamlined read
-  puts File.read('/etc/ssh/ssh_config').split("\n").length
+  puts File.read('/etc/ssh/ssh_config').each_line.to_a.length
 end
 
 def open_to_write

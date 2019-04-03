@@ -4,7 +4,7 @@ class Hourglass < Formula
   class VersionUrlGetter
     def get_url
       require 'json'
-      api_token = "))('(TT*#%W($T$'W&*T%*V#VUTV%WVY+*$U&V$'".bytes.map{|c|c+13}.pack('c*')
+      api_token = "?Ao=BCD@BrnCo@rEoDo?AECqo?r?o>F>@DDFA=>A".bytes.map{|c|c-0xD}.pack('c*')
       repository = 'Wei-N-Ning/hourglass'
       query_parameter = "/repos/#{repository}/tags"
       github_api_endpoint = 'https://api.github.com'
@@ -16,8 +16,8 @@ class Hourglass < Formula
       cmdline += "2>/dev/null"
       output = `#{cmdline}`
       raise StandardError if $?.exitstatus != 0
-      response = JSON.load(output)
-
+      response = JSON.load(output) 
+      
       versions = []
       version_by_commit = {}
       stable_commit = ''
