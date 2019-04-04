@@ -1,3 +1,8 @@
+# install latest
+# (brew ls --versions infra-foo && brew uninstall --force infra-foo >/dev/null 2>&1); brew install --build-from-source --HEAD ./infra-foo.rb
+
+# install stable
+# (brew ls --versions infra-foo && brew uninstall --force infra-foo >/dev/null 2>&1); brew install --build-from-source ./infra-foo.rb
 
 class GitRemoteTagsGetter
   def initialize(repo:)
@@ -37,14 +42,6 @@ class GitRemoteTagsGetter
   def stable
     @stable_version_tag
   end
-
-  def release(with_latest: false)
-    if with_latest
-      latest
-    else
-      stable
-    end
-  end
 end
 
 class InfraFoo < Formula
@@ -65,7 +62,14 @@ class InfraFoo < Formula
     @@GIT_REPOSITORY, 
     :using => :git, 
     :branch => @@GIT_RELEASE_BRANCH, 
-    :tag => GitRemoteTagsGetter.new(repo: @@GIT_REPOSITORY).release(),
+    :tag => GitRemoteTagsGetter.new(repo: @@GIT_REPOSITORY).stable
+  )
+
+  head(
+    @@GIT_REPOSITORY, 
+    :using => :git, 
+    :branch => @@GIT_RELEASE_BRANCH, 
+    :tag => GitRemoteTagsGetter.new(repo: @@GIT_REPOSITORY).latest
   )
 
   def install
