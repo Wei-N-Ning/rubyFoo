@@ -11,7 +11,7 @@ class Hourglass < Formula
 
       cmdline = "curl "
       cmdline += "-H \"Authorization: token #{api_token}\" "
-      cmdline += "-H \"USer-Agent: brew\" "
+      cmdline += "-H \"User-Agent: brew\" "
       cmdline += "#{github_api_endpoint}#{query_parameter} "
       cmdline += "2>/dev/null"
       output = `#{cmdline}`
