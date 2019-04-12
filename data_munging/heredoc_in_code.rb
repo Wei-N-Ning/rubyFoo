@@ -8,6 +8,7 @@
 # this means I can not use __END__ in-code data with certain
 # ruby frameworks such as Homebrew
 
+# note I have to escape all the \ characters in the perl regex
 $DATA = <<"HAHA"
 #!/usr/bin/env bash
 HH=$(cat <<"TEXT"
