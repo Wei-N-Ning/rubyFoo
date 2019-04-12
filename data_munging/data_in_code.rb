@@ -11,7 +11,16 @@ def print_data_in_code
   end
 end
 
-print_data_in_code
+# this requires special handling of global variable
+class Demo
+  def print_data_in_code
+    File.open('/var/tmp/sut/payload.sh', 'w').write(DATA.read)
+  end
+end
+
+# this works out of box
+# print_data_in_code
+Demo.new.print_data_in_code
 
 __END__
 #!/usr/bin/env bash
