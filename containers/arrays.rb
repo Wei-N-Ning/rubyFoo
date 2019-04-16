@@ -60,9 +60,21 @@ def push_and_pop
   p nums
 end
 
+# source
+# https://stackoverflow.com/questions/1801516/how-do-you-add-an-array-to-another-array-in-ruby-and-not-end-up-with-a-multi-dim
+def demo_extend
+  nums = [3, 1, 4]
+  nums.concat [1]
+  nums + [5]
+  nums.append(*[9, 2, 6])
+  nums.append(5, 3, 5)
+  p 'extended:', nums
+end
+
 size_test
 demo_array_creation
 delete_elements_by_value
 delete_if
 do_join
 push_and_pop
+demo_extend
