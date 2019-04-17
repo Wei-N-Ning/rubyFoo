@@ -71,11 +71,32 @@ def demo_extend
   p 'extended:', nums
 end
 
+# array slice is a method in ruby (unlike in Python or Perl)
+def demo_slice
+  arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7]
+  # last N elements
+  last_n = 5
+  p 'last 5 elements', arr.slice(-last_n, last_n)
+
+  # ruby does not automatically shrink the last N elements to
+  # fit the array length
+  last_n = 45
+  last_n = arr.length < last_n ? arr.length : last_n
+  p 'manually shrink last_n to fit array length', 
+    arr.slice(-last_n, last_n)
+end
+
 def demo_comparison_lt_gt
   # see live example in CA infra-tools release.rb
   [2] <=> [1]  # returns -1, 0, 1
   # source
   # http://www.java2s.com/Code/Ruby/Array/comparearraysiswithspaceshipoperator.htm
+
+  p [
+    [2] <=> [1],   # 1 greater
+    [1] <=> [1],   # 0 equal
+    [2] <=> [10],  # -1 less
+  ]
 end
 
 size_test
@@ -85,3 +106,5 @@ delete_if
 do_join
 push_and_pop
 demo_extend
+demo_slice
+demo_comparison_lt_gt

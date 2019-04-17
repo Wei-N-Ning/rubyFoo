@@ -28,6 +28,13 @@ def demo_each
   print "\n"
 end
 
+# is preferred to calling reverse() than calling each()
+def demo_reverse_each
+  l = %w[there is a cow]
+  l.reverse_each { |elem| print elem }
+  puts ''
+end
+
 # recap in udemy compr ruby prog s6l28
 # for var in iterable
 # end
@@ -79,6 +86,7 @@ end
 demo_while_loop
 demo_foreach
 demo_each
+demo_reverse_each
 for_numeric_range
 times_loop; p $global_var
 multiple_loop_variables
