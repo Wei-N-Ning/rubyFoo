@@ -71,6 +71,13 @@ def demo_extend
   p 'extended:', nums
 end
 
+def demo_comparison_lt_gt
+  # see live example in CA infra-tools release.rb
+  [2] <=> [1]  # returns -1, 0, 1
+  # source
+  # http://www.java2s.com/Code/Ruby/Array/comparearraysiswithspaceshipoperator.htm
+end
+
 size_test
 demo_array_creation
 delete_elements_by_value
