@@ -28,5 +28,21 @@ def demo_bytes
   print_as_chars(text: '会え上お')
 end
 
+def bytes_to_chars(byte_arr:, mode: nil)
+  byte_arr.map do |b| 
+    mode.nil? ? b.chr : b.chr(mode)
+  end
+end
+
+def demo_bytes_to_chars
+  p bytes_to_chars(
+    byte_arr: [233, 0x31, 0xEFBC, 0x32],
+    mode: 'UTF-8'
+  )
+end
+
 demo_bytes
+demo_bytes_to_chars
+
+
 

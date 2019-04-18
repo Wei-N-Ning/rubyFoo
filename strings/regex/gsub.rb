@@ -1,8 +1,12 @@
 #!/usr/bin/env ruby
 
-def do_replace
-  text = 'there is a cow'
+def demo_gsub
+  text = 'there is aa cow, c'
+  #         ^^^    ^^ ^^^^^^
+  p [
+    text.gsub(/(\w).*\1/, 'foo'),
+  ]
 end
 
-do_replace
+demo_gsub
  
