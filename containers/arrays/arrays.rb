@@ -56,7 +56,11 @@ def push_and_pop
   # push multiple elements via *args
   nums.push(*%w[there is a cow])
   p nums
-  nums.pop()
+  nums.pop
+  p nums
+
+  # push-left
+  nums.unshift -13, 37
   p nums
 end
 
