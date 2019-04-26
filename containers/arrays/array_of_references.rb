@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# source
+# ruby way 3rd, P224/1832
 def create_arr_of_refs
   arr = Array.new(4, 'cow')
   p arr
