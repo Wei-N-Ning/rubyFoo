@@ -4,6 +4,9 @@
 # https://stackoverflow.com/questions/26434923/parse-command-line-arguments-in-a-ruby-script
 # https://ruby-doc.org/stdlib-2.1.1/libdoc/optparse/rdoc/OptionParser.html
 
+# up-to-date reference
+# https://ruby-doc.org/stdlib-2.6.1/libdoc/optparse/rdoc/OptionParser.html
+
 require 'optparse'
 require 'optparse/time'
 require 'ostruct'
