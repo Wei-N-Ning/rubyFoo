@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+# see:
+# https://github.com/github/rubocop-github/blob/master/STYLEGUIDE.md
+# http://tomdoc.org/
+
 # block
 # comments
 
