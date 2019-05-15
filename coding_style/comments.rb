@@ -4,6 +4,12 @@
 # https://github.com/github/rubocop-github/blob/master/STYLEGUIDE.md
 # http://tomdoc.org/
 
+# see also: how to set tab width per file/code format
+# https://stackoverflow.com/questions/34247939/how-to-set-per-filetype-tab-size
+# "[ruby]": {
+#   "editor.tabSize": 2
+# }
+
 # block
 # comments
 
