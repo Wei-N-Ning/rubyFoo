@@ -8,5 +8,6 @@ require_relative 'mytest.bundle'
 include MyTest
 
 puts test1
+puts teststr
 RUBY
 

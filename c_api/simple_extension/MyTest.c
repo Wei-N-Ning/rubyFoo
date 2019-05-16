@@ -13,15 +13,24 @@ void Init_mytest();
 
 // Prototype for our method 'test1' - methods are prefixed by 'method_' here
 VALUE method_test1(VALUE self);
+VALUE method_teststr(VALUE self);
 
 // The initialization method for this module
 void Init_mytest() {
 	MyTest = rb_define_module("MyTest");
 	rb_define_method(MyTest, "test1", method_test1, 0);
+  rb_define_method(MyTest, "teststr", method_teststr, 0);
 }
 
 // Our 'test1' method.. it simply returns a value of '10' for now.
 VALUE method_test1(VALUE self) {
 	int x = 10;
 	return INT2NUM(x);
+}
+
+// see: https://silverhammermba.github.io/emberb/c/
+VALUE method_teststr(VALUE self) {
+  VALUE x;
+  x = rb_str_new_cstr("Hello, world!");
+  return x;
 }
