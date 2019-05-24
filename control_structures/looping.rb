@@ -26,6 +26,9 @@ def demo_each
   # this works for oneliner
   l.each { |x| print x }
   print "\n"
+
+  # index comes last
+  l.each_with_index { |elem, index| print "#{index} #{elem}" }
 end
 
 # is preferred to calling reverse() than calling each()
